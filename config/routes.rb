@@ -1,5 +1,26 @@
 Rails.application.routes.draw do
+=begin
+  get 'coupons/index'
+  get 'coupons/new'
+  get 'coupons/create'
+  get 'coupons/show'
+        Prefix Verb URI Pattern               Controller#Action
+ coupons_index GET  /coupons/index(.:format)  coupons#index
+   coupons_new GET  /coupons/new(.:format)    coupons#new
+coupons_create GET  /coupons/create(.:format) coupons#create
+  coupons_show GET  /coupons/show(.:format)   coupons#show
+=end
+
+  resources :coupons, only: [:index, :new, :create, :show]
+
+=begin
+  Prefix Verb URI Pattern               Controller#Action
+  coupons_index GET  /coupons/index(.:format)  coupons#index
+  coupons_new GET  /coupons/new(.:format)    coupons#new
+  coupons_create GET  /coupons/create(.:format) coupons#create
+  coupons_show GET  /coupons/show(.:format)   coupons#show
   # The priority is based upon order of creation: first created -> highest priority.
+=end
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
